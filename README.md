@@ -1,4 +1,4 @@
-# MiniBitcoinPy 🪙
+# MiniBitcoinPy ₿🐍
 
 > A minimal Bitcoin-like Proof-of-Work blockchain node in Python. Learn how blockchains work by running your own network.
 
