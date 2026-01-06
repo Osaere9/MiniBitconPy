@@ -1,1 +1,1 @@
-"""Test suite for Mini PoW Chain."""
+"""Test suite for MiniBitcoinPy."""

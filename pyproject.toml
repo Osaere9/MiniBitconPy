@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "mini-pow-chain"
+name = "mini-bitcoin-py"
 version = "0.1.0"
 description = "A minimal Bitcoin-like Proof-of-Work blockchain node in Python with UTXO transactions and ECDSA signatures"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 authors = [
-    { name = "Mini PoW Chain Contributors" }
+    { name = "MiniBitcoinPy Contributors" }
 ]
 keywords = ["blockchain", "bitcoin", "proof-of-work", "cryptocurrency", "utxo"]
 classifiers = [
@@ -53,16 +53,16 @@ dev = [
 ]
 
 [project.scripts]
-mini-pow-chain = "cli.main:app"
+mini-bitcoin-py = "cli.main:app"
 
 [project.urls]
-Homepage = "https://github.com/your-username/mini-pow-chain"
-Documentation = "https://github.com/your-username/mini-pow-chain#readme"
-Repository = "https://github.com/your-username/mini-pow-chain"
-Issues = "https://github.com/your-username/mini-pow-chain/issues"
+Homepage = "https://github.com/your-username/mini-bitcoin-py"
+Documentation = "https://github.com/your-username/mini-bitcoin-py#readme"
+Repository = "https://github.com/your-username/mini-bitcoin-py"
+Issues = "https://github.com/your-username/mini-bitcoin-py/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["mini_pow_chain", "cli"]
+packages = ["mini_bitcoin_py", "cli"]
 
 [tool.ruff]
 target-version = "py311"
@@ -86,7 +86,7 @@ ignore = [
 ]
 
 [tool.ruff.isort]
-known-first-party = ["mini_pow_chain", "cli"]
+known-first-party = ["mini_bitcoin_py", "cli"]
 
 [tool.black]
 line-length = 100
@@ -108,7 +108,7 @@ filterwarnings = [
 ]
 
 [tool.coverage.run]
-source = ["mini_pow_chain"]
+source = ["mini_bitcoin_py"]
 branch = true
 
 [tool.coverage.report]

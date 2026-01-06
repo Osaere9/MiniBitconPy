@@ -11,7 +11,7 @@ This provides:
 
 from typing import List
 
-from mini_pow_chain.core.hashing import double_sha256
+from mini_bitcoin_py.core.hashing import double_sha256
 
 
 def compute_merkle_root(txids: List[str]) -> str:

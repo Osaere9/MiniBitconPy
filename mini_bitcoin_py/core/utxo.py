@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 from typing import Dict, Tuple, Optional, Set
 import copy
 
-from mini_pow_chain.core.tx import Transaction, TxOut
+from mini_bitcoin_py.core.tx import Transaction, TxOut
 
 
 # Type alias for UTXO key

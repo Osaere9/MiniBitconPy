@@ -24,11 +24,11 @@ from enum import Enum
 from typing import Optional, List, Tuple, Dict
 import time
 
-from mini_pow_chain.core.tx import Transaction, COINBASE_TXID, COINBASE_INDEX
-from mini_pow_chain.core.block import Block, GENESIS_PREV_HASH
-from mini_pow_chain.core.utxo import UTXOSet, MempoolUTXOTracker, UTXOKey
-from mini_pow_chain.core.keys import verify_signature
-from mini_pow_chain.core.hashing import double_sha256
+from mini_bitcoin_py.core.tx import Transaction, COINBASE_TXID, COINBASE_INDEX
+from mini_bitcoin_py.core.block import Block, GENESIS_PREV_HASH
+from mini_bitcoin_py.core.utxo import UTXOSet, MempoolUTXOTracker, UTXOKey
+from mini_bitcoin_py.core.keys import verify_signature
+from mini_bitcoin_py.core.hashing import double_sha256
 
 
 # Maximum time in the future a block timestamp can be (2 hours)

@@ -26,7 +26,7 @@ except ImportError:
 
     USING_COINCURVE = False
 
-from mini_pow_chain.core.hashing import double_sha256, hash160
+from mini_bitcoin_py.core.hashing import double_sha256, hash160
 
 
 @dataclass

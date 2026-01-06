@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     )
 
     # Database
-    database_url: str = "postgresql://postgres:postgres@localhost:5432/minichain"
+    database_url: str = "postgresql://postgres:postgres@localhost:5432/minibitcoinpy"
 
     # Node
     node_host: str = "0.0.0.0"

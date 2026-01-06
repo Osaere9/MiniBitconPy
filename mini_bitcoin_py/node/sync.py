@@ -17,16 +17,16 @@ from typing import Optional, List, Tuple, Dict, Any
 
 from sqlalchemy.orm import Session
 
-from mini_pow_chain.core.block import Block
-from mini_pow_chain.core.utxo import UTXOSet
-from mini_pow_chain.core.consensus import compute_work, compute_cumulative_work
-from mini_pow_chain.core.validation import validate_block_full
-from mini_pow_chain.node.storage import (
+from mini_bitcoin_py.core.block import Block
+from mini_bitcoin_py.core.utxo import UTXOSet
+from mini_bitcoin_py.core.consensus import compute_work, compute_cumulative_work
+from mini_bitcoin_py.core.validation import validate_block_full
+from mini_bitcoin_py.node.storage import (
     BlockStorage,
     ChainStateStorage,
     rebuild_utxo_set,
 )
-from mini_pow_chain.node.config import get_settings
+from mini_bitcoin_py.node.config import get_settings
 
 logger = logging.getLogger(__name__)
 

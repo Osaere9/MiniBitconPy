@@ -2,14 +2,14 @@
 
 import pytest
 
-from mini_pow_chain.core.keys import (
+from mini_bitcoin_py.core.keys import (
     PrivateKey,
     PublicKey,
     Wallet,
     verify_signature,
 )
-from mini_pow_chain.core.tx import Transaction, TxIn, TxOut, COINBASE_TXID, COINBASE_INDEX
-from mini_pow_chain.core.hashing import double_sha256
+from mini_bitcoin_py.core.tx import Transaction, TxIn, TxOut, COINBASE_TXID, COINBASE_INDEX
+from mini_bitcoin_py.core.hashing import double_sha256
 
 
 class TestPrivateKey:

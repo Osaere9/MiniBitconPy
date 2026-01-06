@@ -2,7 +2,7 @@
 
 import pytest
 
-from mini_pow_chain.core.hashing import sha256, double_sha256, hash160
+from mini_bitcoin_py.core.hashing import sha256, double_sha256, hash160
 
 
 class TestSHA256:

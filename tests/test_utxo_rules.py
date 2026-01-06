@@ -2,10 +2,10 @@
 
 import pytest
 
-from mini_pow_chain.core.utxo import UTXOSet, MempoolUTXOTracker
-from mini_pow_chain.core.tx import Transaction, TxIn, TxOut
-from mini_pow_chain.core.keys import Wallet
-from mini_pow_chain.core.validation import (
+from mini_bitcoin_py.core.utxo import UTXOSet, MempoolUTXOTracker
+from mini_bitcoin_py.core.tx import Transaction, TxIn, TxOut
+from mini_bitcoin_py.core.keys import Wallet
+from mini_bitcoin_py.core.validation import (
     validate_transaction_basic,
     validate_transaction_against_utxo,
     ValidationError,

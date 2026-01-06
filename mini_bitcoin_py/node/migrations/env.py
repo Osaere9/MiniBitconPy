@@ -13,7 +13,7 @@ from sqlalchemy import engine_from_config, pool
 from alembic import context
 
 # Import our models to register them with SQLAlchemy
-from mini_pow_chain.node.models import Base
+from mini_bitcoin_py.node.models import Base
 
 # this is the Alembic Config object
 config = context.config
@@ -30,7 +30,7 @@ def get_url():
     """Get database URL from environment or config."""
     return os.environ.get(
         "DATABASE_URL",
-        config.get_main_option("sqlalchemy.url", "postgresql://postgres:postgres@localhost:5432/minichain"),
+        config.get_main_option("sqlalchemy.url", "postgresql://postgres:postgres@localhost:5432/minibitcoinpy"),
     )
 
 

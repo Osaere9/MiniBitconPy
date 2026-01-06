@@ -17,8 +17,8 @@ from dataclasses import dataclass, field
 
 import httpx
 
-from mini_pow_chain.core.tx import Transaction
-from mini_pow_chain.core.block import Block
+from mini_bitcoin_py.core.tx import Transaction
+from mini_bitcoin_py.core.block import Block
 
 logger = logging.getLogger(__name__)
 

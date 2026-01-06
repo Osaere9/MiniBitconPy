@@ -21,26 +21,26 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from mini_pow_chain.core.block import Block, create_genesis_block
-from mini_pow_chain.core.tx import Transaction, TxIn, TxOut
-from mini_pow_chain.core.utxo import UTXOSet, MempoolUTXOTracker
-from mini_pow_chain.core.consensus import mine_block, DEFAULT_TARGET
-from mini_pow_chain.core.validation import (
+from mini_bitcoin_py.core.block import Block, create_genesis_block
+from mini_bitcoin_py.core.tx import Transaction, TxIn, TxOut
+from mini_bitcoin_py.core.utxo import UTXOSet, MempoolUTXOTracker
+from mini_bitcoin_py.core.consensus import mine_block, DEFAULT_TARGET
+from mini_bitcoin_py.core.validation import (
     validate_transaction_against_utxo,
     validate_block_full,
 )
-from mini_pow_chain.core.keys import Wallet
-from mini_pow_chain.node.config import Settings, get_settings
-from mini_pow_chain.node.db import get_db, get_db_session, init_db
-from mini_pow_chain.node.storage import (
+from mini_bitcoin_py.core.keys import Wallet
+from mini_bitcoin_py.node.config import Settings, get_settings
+from mini_bitcoin_py.node.db import get_db, get_db_session, init_db
+from mini_bitcoin_py.node.storage import (
     BlockStorage,
     ChainStateStorage,
     PeerStorage,
     MempoolStorage,
     rebuild_utxo_set,
 )
-from mini_pow_chain.node.p2p import P2PManager
-from mini_pow_chain.node.sync import ChainSynchronizer
+from mini_bitcoin_py.node.p2p import P2PManager
+from mini_bitcoin_py.node.sync import ChainSynchronizer
 
 logger = logging.getLogger(__name__)
 
@@ -202,7 +202,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Mini PoW Chain Node",
+    title="MiniBitcoinPy Node",
     description="A minimal Bitcoin-like Proof-of-Work blockchain node",
     version="0.1.0",
     lifespan=lifespan,

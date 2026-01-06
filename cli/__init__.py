@@ -1,1 +1,1 @@
-"""CLI package for Mini PoW Chain."""
+"""CLI package for MiniBitcoinPy."""

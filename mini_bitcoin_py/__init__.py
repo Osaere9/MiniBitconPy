@@ -1,5 +1,5 @@
 """
-Mini PoW Chain - A minimal Bitcoin-like Proof-of-Work blockchain node.
+MiniBitcoinPy - A minimal Bitcoin-like Proof-of-Work blockchain node.
 
 This package implements a functional blockchain with:
 - UTXO-based transactions with ECDSA signatures (secp256k1)

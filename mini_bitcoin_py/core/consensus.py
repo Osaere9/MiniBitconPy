@@ -20,7 +20,7 @@ import time
 from dataclasses import dataclass
 from typing import Optional, Callable
 
-from mini_pow_chain.core.block import Block
+from mini_bitcoin_py.core.block import Block
 
 
 # Maximum possible target (256 bits all 1s)

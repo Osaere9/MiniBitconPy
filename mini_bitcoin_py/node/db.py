@@ -8,7 +8,7 @@ from typing import Generator
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker, DeclarativeBase
 
-from mini_pow_chain.node.config import get_settings
+from mini_bitcoin_py.node.config import get_settings
 
 
 class Base(DeclarativeBase):
@@ -86,7 +86,7 @@ def get_db_session() -> Generator[Session, None, None]:
 
 def init_db():
     """Initialize database tables."""
-    from mini_pow_chain.node.models import Base  # noqa: F401
+    from mini_bitcoin_py.node.models import Base  # noqa: F401
 
     Base.metadata.create_all(bind=get_engine())
 

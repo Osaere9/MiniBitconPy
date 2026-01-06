@@ -26,15 +26,15 @@ from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any
 import time
 
-from mini_pow_chain.core.encoding import (
+from mini_bitcoin_py.core.encoding import (
     encode_int32,
     encode_uint32,
     encode_fixed_bytes,
     encode_target,
 )
-from mini_pow_chain.core.hashing import double_sha256
-from mini_pow_chain.core.tx import Transaction
-from mini_pow_chain.core.merkle import compute_merkle_root
+from mini_bitcoin_py.core.hashing import double_sha256
+from mini_bitcoin_py.core.tx import Transaction
+from mini_bitcoin_py.core.merkle import compute_merkle_root
 
 
 # Genesis block previous hash

@@ -3,19 +3,19 @@
 import time
 import pytest
 
-from mini_pow_chain.core.block import Block, BlockHeader, create_genesis_block, GENESIS_PREV_HASH
-from mini_pow_chain.core.tx import Transaction, TxIn, TxOut
-from mini_pow_chain.core.utxo import UTXOSet
-from mini_pow_chain.core.keys import Wallet
-from mini_pow_chain.core.consensus import (
+from mini_bitcoin_py.core.block import Block, BlockHeader, create_genesis_block, GENESIS_PREV_HASH
+from mini_bitcoin_py.core.tx import Transaction, TxIn, TxOut
+from mini_bitcoin_py.core.utxo import UTXOSet
+from mini_bitcoin_py.core.keys import Wallet
+from mini_bitcoin_py.core.consensus import (
     compute_work,
     is_valid_pow,
     mine_block,
     DEFAULT_TARGET,
     MAX_TARGET,
 )
-from mini_pow_chain.core.merkle import compute_merkle_root
-from mini_pow_chain.core.validation import (
+from mini_bitcoin_py.core.merkle import compute_merkle_root
+from mini_bitcoin_py.core.validation import (
     validate_block_header,
     validate_block_transactions,
     validate_block_full,

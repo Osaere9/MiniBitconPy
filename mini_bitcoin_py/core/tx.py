@@ -38,7 +38,7 @@ Signature = ECDSA_sign(double_sha256(preimage))
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any
 
-from mini_pow_chain.core.encoding import (
+from mini_bitcoin_py.core.encoding import (
     encode_int32,
     encode_uint32,
     encode_int64,
@@ -46,7 +46,7 @@ from mini_pow_chain.core.encoding import (
     encode_fixed_bytes,
     encode_hex_bytes,
 )
-from mini_pow_chain.core.hashing import double_sha256
+from mini_bitcoin_py.core.hashing import double_sha256
 
 
 # Coinbase constants

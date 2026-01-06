@@ -1,5 +1,5 @@
 """
-Mini PoW Chain CLI.
+MiniBitcoinPy CLI.
 
 Command-line interface for interacting with the blockchain.
 
@@ -22,12 +22,12 @@ from rich import print as rprint
 from rich.console import Console
 from rich.table import Table
 
-from mini_pow_chain.core.keys import Wallet, PrivateKey
-from mini_pow_chain.core.tx import Transaction, TxIn, TxOut
+from mini_bitcoin_py.core.keys import Wallet, PrivateKey
+from mini_bitcoin_py.core.tx import Transaction, TxIn, TxOut
 
 app = typer.Typer(
-    name="mini-pow-chain",
-    help="Mini PoW Chain - A minimal Bitcoin-like blockchain CLI",
+    name="mini-bitcoin-py",
+    help="MiniBitcoinPy - A minimal Bitcoin-like blockchain CLI",
     add_completion=False,
 )
 console = Console()
@@ -66,7 +66,7 @@ def create_wallet():
     Generate a new wallet (private key, public key, address).
 
     Example:
-        mini-pow-chain create-wallet
+        mini-bitcoin-py create-wallet
     """
     wallet = Wallet.generate()
     info = wallet.to_dict()
@@ -95,7 +95,7 @@ def balance(
     Check balance for an address.
 
     Example:
-        mini-pow-chain balance <address> --node http://localhost:8000
+        mini-bitcoin-py balance <address> --node http://localhost:8000
     """
     url = f"{node.rstrip('/')}/balance/{address}"
 
@@ -119,7 +119,7 @@ def utxos(
     List UTXOs for an address.
 
     Example:
-        mini-pow-chain utxos <address>
+        mini-bitcoin-py utxos <address>
     """
     url = f"{node.rstrip('/')}/utxos/{address}"
 
@@ -165,7 +165,7 @@ def send(
     Create and send a transaction.
 
     Example:
-        mini-pow-chain send --from <privkey> --to <address> --amount 1000000
+        mini-bitcoin-py send --from <privkey> --to <address> --amount 1000000
     """
     # Load wallet
     try:
@@ -283,7 +283,7 @@ def mine(
     Mine a new block.
 
     Example:
-        mini-pow-chain mine --address <your_address>
+        mini-bitcoin-py mine --address <your_address>
     """
     rprint(f"\n[bold]Mining block to {miner_address}...[/bold]")
 
@@ -362,7 +362,7 @@ def sync(
     Sync chain from a peer.
 
     Example:
-        mini-pow-chain sync http://localhost:8001
+        mini-bitcoin-py sync http://localhost:8001
     """
     rprint(f"\n[bold]Syncing from {peer_url}...[/bold]")
 
@@ -391,7 +391,7 @@ def status(
     Get node status.
 
     Example:
-        mini-pow-chain status
+        mini-bitcoin-py status
     """
     url = f"{node.rstrip('/')}/health"
 
@@ -428,14 +428,14 @@ def node(
     Start a blockchain node.
 
     Example:
-        mini-pow-chain node --port 8000
+        mini-bitcoin-py node --port 8000
     """
     import uvicorn
 
     rprint(f"\n[bold]Starting node on {host}:{port}...[/bold]\n")
 
     uvicorn.run(
-        "mini_pow_chain.node.api:app",
+        "mini_bitcoin_py.node.api:app",
         host=host,
         port=port,
         reload=False,
