@@ -1,0 +1,102 @@
+version: '3.8'
+
+services:
+  # PostgreSQL database
+  postgres:
+    image: postgres:15-alpine
+    container_name: minichain-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: minichain
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - minichain-network
+
+  # Node 1 - Primary node
+  node1:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: minichain-node1
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/minichain_node1
+      NODE_HOST: "0.0.0.0"
+      NODE_PORT: "8000"
+      NODE_NAME: node1
+      LOG_LEVEL: INFO
+      BOOTSTRAP_PEERS: ""
+    ports:
+      - "8001:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - minichain-network
+    restart: unless-stopped
+
+  # Node 2
+  node2:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: minichain-node2
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/minichain_node2
+      NODE_HOST: "0.0.0.0"
+      NODE_PORT: "8000"
+      NODE_NAME: node2
+      LOG_LEVEL: INFO
+      BOOTSTRAP_PEERS: "http://node1:8000"
+    ports:
+      - "8002:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      node1:
+        condition: service_started
+    networks:
+      - minichain-network
+    restart: unless-stopped
+
+  # Node 3
+  node3:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: minichain-node3
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/minichain_node3
+      NODE_HOST: "0.0.0.0"
+      NODE_PORT: "8000"
+      NODE_NAME: node3
+      LOG_LEVEL: INFO
+      BOOTSTRAP_PEERS: "http://node1:8000,http://node2:8000"
+    ports:
+      - "8003:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      node1:
+        condition: service_started
+      node2:
+        condition: service_started
+    networks:
+      - minichain-network
+    restart: unless-stopped
+
+networks:
+  minichain-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

@@ -1,0 +1,120 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mini-pow-chain"
+version = "0.1.0"
+description = "A minimal Bitcoin-like Proof-of-Work blockchain node in Python with UTXO transactions and ECDSA signatures"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Mini PoW Chain Contributors" }
+]
+keywords = ["blockchain", "bitcoin", "proof-of-work", "cryptocurrency", "utxo"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "httpx>=0.26.0",
+    "sqlalchemy>=2.0.25",
+    "alembic>=1.13.1",
+    "psycopg2-binary>=2.9.9",
+    "coincurve>=19.0.1",
+    "typer>=0.9.0",
+    "pydantic>=2.5.3",
+    "pydantic-settings>=2.1.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.4",
+    "pytest-asyncio>=0.23.3",
+    "pytest-cov>=4.1.0",
+    "httpx>=0.26.0",
+    "ruff>=0.1.14",
+    "black>=24.1.1",
+    "mypy>=1.8.0",
+    "types-psycopg2>=2.9.21",
+]
+
+[project.scripts]
+mini-pow-chain = "cli.main:app"
+
+[project.urls]
+Homepage = "https://github.com/your-username/mini-pow-chain"
+Documentation = "https://github.com/your-username/mini-pow-chain#readme"
+Repository = "https://github.com/your-username/mini-pow-chain"
+Issues = "https://github.com/your-username/mini-pow-chain/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mini_pow_chain", "cli"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # Pyflakes
+    "I",      # isort
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "UP",     # pyupgrade
+    "ARG",    # flake8-unused-arguments
+    "SIM",    # flake8-simplify
+]
+ignore = [
+    "E501",   # line too long (handled by black)
+    "B008",   # do not perform function calls in argument defaults
+    "B904",   # raise without from inside except
+    "ARG001", # unused function argument
+]
+
+[tool.ruff.isort]
+known-first-party = ["mini_pow_chain", "cli"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-v --tb=short"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["mini_pow_chain"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+]
